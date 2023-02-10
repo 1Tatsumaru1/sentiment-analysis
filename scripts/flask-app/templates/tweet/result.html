@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Résultat de l'analyse{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <a href="{{ url_for('index') }}">Essayer avec un autre Tweet</a>
+  {% if answer == 0 %}
+    <div style="width:100%;height:0;padding-bottom:100%;position:relative;">
+      <iframe src="https://giphy.com/embed/3o6fJ9RmPYIUN3rfHy" width="100%" height="400" style="position:absolute" class="giphy-embed" allowFullScreen></iframe>
+    </div>
+  {% else %}
+    <div style="width:100%;height:0;padding-bottom:69%;position:relative;">
+      <iframe src="https://giphy.com/embed/J8FZIm9VoBU6Q" width="100%" height="400" style="position:absolute" class="giphy-embed" allowFullScreen></iframe>
+    </div>
+  {% endif %}
+  <p>{{ pred }}</p>
+{% endblock %}
